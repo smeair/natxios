@@ -1,0 +1,31 @@
+# Natxios: search engines welcome. AI training and data mining crawlers are not.
+# See /terms ("No scraping, data mining or AI training") and /.well-known/tdmrep.json
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /quiz
+Disallow: /admin
+
+# AI training and dataset crawlers
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: CCBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: PerplexityBot
+User-agent: Bytespider
+User-agent: Meta-ExternalAgent
+User-agent: FacebookBot
+User-agent: cohere-ai
+User-agent: Diffbot
+User-agent: Omgilibot
+User-agent: Timpibot
+User-agent: ImagesiftBot
+User-agent: DataForSeoBot
+User-agent: magpie-crawler
+Disallow: /
