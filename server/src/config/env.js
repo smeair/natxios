@@ -28,6 +28,8 @@ const schema = z.object({
   // Defaults to true in production.
   REDIS_REQUIRE_NOEVICTION: z.preprocess((v) => (v === undefined || v === '' ? undefined : v === 'true' || v === true), z.boolean().optional()),
   REDIS_CONNECT_TIMEOUT_MS: int(5000, 500),
+  // Set to false only for providers with self-signed TLS certificates (Heroku Redis). Applies to rediss:// URLs.
+  REDIS_TLS_REJECT_UNAUTHORIZED: z.preprocess((v) => (v === undefined || v === '' ? true : v === 'true' || v === true), z.boolean()),
 
   // Database (optional for now: without it the newsletter returns 503)
   MONGODB_URI: z.preprocess((v) => (v === '' ? undefined : v), z.string().optional()),

@@ -10,7 +10,11 @@ import { logger } from '../common/logger.js';
 export const redis = env.REDIS_URL
   ? createClient({
       url: env.REDIS_URL,
-      socket: { connectTimeout: env.REDIS_CONNECT_TIMEOUT_MS, reconnectStrategy: (n) => Math.min(n * 200, 5000) },
+      socket: {
+        connectTimeout: env.REDIS_CONNECT_TIMEOUT_MS,
+        reconnectStrategy: (n) => Math.min(n * 200, 5000),
+        ...(env.REDIS_URL.startsWith('rediss://') ? { tls: true, rejectUnauthorized: env.REDIS_TLS_REJECT_UNAUTHORIZED } : {}),
+      },
     })
   : null;
 
