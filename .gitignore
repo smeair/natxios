@@ -1,0 +1,44 @@
+# ----- Dependencies and builds -----
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.vite/
+*.tsbuildinfo
+
+# ----- Environment and secrets (only the .env.example files are committed) -----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+
+# ----- Question bank: only the encrypted copy is committed -----
+server/src/modules/bank/questions.json
+server/src/modules/bank/*.plain.json
+
+# ----- Claude and AI tooling -----
+.claude/
+.claude*
+CLAUDE.md
+CLAUDE.local.md
+**/CLAUDE.md
+
+# ----- Markdown docs (kept local, not committed) -----
+*.md
+
+# ----- Logs and OS / editor files -----
+*.log
+logs/
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+tmp/
